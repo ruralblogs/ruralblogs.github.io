@@ -31,15 +31,9 @@
             <a href="{{ site.baseurl }}/about">About</a>
 	    <select name="select">
 		{% for category in site.categories %}
-  			<h3>{{ category[0] }}</h3>
-  			<ul>
-    				{% for post in category[1] %}
-      					<li><a href="{{ post.url }}"> <option value="{{ post.title }}">{{ post.title }}</option> </a></li>
-    				{% endfor %}
-  			</ul>
+  			<option onClick=`window.location.href="${post.url}"` value="{{ category[0] }}">{{ category[0] }}</option>
 		{% endfor %}
- 
-	   </select>
+	    </select>
 	    <!-- HTML elements for search -->
 	    <input type="text" id="search-input" placeholder="search...">
       	    <ul id="results-container"></ul>
